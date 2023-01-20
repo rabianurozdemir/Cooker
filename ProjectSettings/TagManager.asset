@@ -7,14 +7,14 @@ TagManager:
   - Pot
   - Egg
   - GreenPepper
+  - Lemon
+  - Oil
+  - Onion
   - Potato
   - RedPepper
   - Salt
   - Tomato
-  - Lemon
   - Yoghurt
-  - Oil
-  - Onion
   layers:
   - Default
   - TransparentFX
@@ -51,4 +51,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 230168397
+    locked: 0
+  - name: Stand
+    uniqueID: 1681652281
+    locked: 0
+  - name: Pot
+    uniqueID: 3370422757
+    locked: 0
+  - name: Food
+    uniqueID: 3930843005
+    locked: 0
+  - name: UI
+    uniqueID: 2242836145
     locked: 0

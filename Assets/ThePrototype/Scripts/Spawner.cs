@@ -17,6 +17,5 @@ public class Spawner : MonoBehaviour
         
         Instantiate(foods[randomFood], new Vector2(Random.Range(-xBound, xBound), yBound), Quaternion.identity);
         StartCoroutine((SpawnRandomGameObject()));
-
     }
 }
