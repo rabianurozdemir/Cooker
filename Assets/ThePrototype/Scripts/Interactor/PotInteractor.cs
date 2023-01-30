@@ -20,6 +20,7 @@ namespace ThePrototype.Scripts.Interactor
 
         [SerializeField] private AudioSource collectSoundEffect;
         [SerializeField] private AudioSource deathSoundEffect;
+        [SerializeField] private AudioSource winSoundEffect;
         void Start()
         {
             SelectRecipe();
@@ -50,7 +51,19 @@ namespace ThePrototype.Scripts.Interactor
                         _isContain = true;
                         int index = activeRecipe.FindIndex(a => a.Equals(food)); // Find index
                         activeRecipe.RemoveAt(index); // Remove item
-                        //receivedFoods.Add(activeRecipe[index]);
+                        recipeContent.text = "";
+                        for(int i=0; i<activeRecipe.Count; i++)
+                        {
+                            recipeContent.text += (activeRecipe[i] + "\n");
+                            Debug.Log(activeRecipe[i] + "\n");
+                        }
+                        // receivedFoods.Add(activeRecipe[index]);
+                        
+                        if (activeRecipe.Count == 0) // Request a new recipe if all foods have been collected
+                        {
+                            winSoundEffect.Play();
+                            SelectRecipe();
+                        } 
                         break;
                     }
                 }
