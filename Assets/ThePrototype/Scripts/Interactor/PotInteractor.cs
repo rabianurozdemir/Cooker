@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using ThePrototype.Scripts.Recipe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,13 +16,15 @@ namespace ThePrototype.Scripts.Interactor
         private int _score;
         public Text recipeContent;
         public List<FoodTypes> activeRecipe;
+        //private List<FoodTypes> receivedFoods;
 
-        
+        [SerializeField] private AudioSource collectSoundEffect;
+        [SerializeField] private AudioSource deathSoundEffect;
         void Start()
         {
             SelectRecipe();
         }
-        
+
         public void SelectRecipe()
         {
             int randomRecipe = UnityEngine.Random.Range(0, recipes.Count);
@@ -35,9 +40,9 @@ namespace ThePrototype.Scripts.Interactor
         private void OnTriggerEnter2D(Collider2D col)
         { 
             bool _isContain = false;
+            
             if (col.gameObject.TryGetComponent<FoodType>(out var foodTypes))
             {
-                
                 foreach (FoodTypes food in activeRecipe)
                 {
                     if (food == foodTypes.Type)
@@ -45,27 +50,30 @@ namespace ThePrototype.Scripts.Interactor
                         _isContain = true;
                         int index = activeRecipe.FindIndex(a => a.Equals(food)); // Find index
                         activeRecipe.RemoveAt(index); // Remove item
+                        //receivedFoods.Add(activeRecipe[index]);
                         break;
                     }
                 }
                 if (_isContain)
                 {
+                    collectSoundEffect.Play();
                     _score++;
                 }
                 else
                 {
+                    deathSoundEffect.Play();
+                    //receivedFoods.Clear();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
             DestroyFood(col.gameObject);
         }
-
+        
         public override void DestroyFood(GameObject obj)
         {
             //play effect
             //do something
             base.DestroyFood(obj);
         }
-        
     }
 }

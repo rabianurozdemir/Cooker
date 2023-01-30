@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/ThePrototype/Scenes/SampleScene.unity
+- path: Assets/ThePrototype/Scenes/Menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

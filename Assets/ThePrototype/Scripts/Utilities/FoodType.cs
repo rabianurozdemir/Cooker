@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace ThePrototype
 {
-
     [Serializable]
     public enum FoodTypes
     {
