@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using ThePrototype.Scripts.Recipe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Random = System.Random;
 
 namespace ThePrototype.Scripts.Interactor
 {

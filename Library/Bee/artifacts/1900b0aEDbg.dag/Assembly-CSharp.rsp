@@ -384,6 +384,7 @@
 "Assets/ThePrototype/Scripts/Interactor/PotInteractor.cs"
 "Assets/ThePrototype/Scripts/Interactor/StandInteractor.cs"
 "Assets/ThePrototype/Scripts/MainMenu.cs"
+"Assets/ThePrototype/Scripts/PlayerMovement.cs"
 "Assets/ThePrototype/Scripts/PotMovement.cs"
 "Assets/ThePrototype/Scripts/Recipe/RecipeSettings.cs"
 "Assets/ThePrototype/Scripts/Spawner.cs"
